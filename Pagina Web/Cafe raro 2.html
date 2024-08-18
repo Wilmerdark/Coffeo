@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafetería Novedades</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body{
+            background-color: rgb(97, 97, 97);
+            
+        }
+
+
+
+
+        .navbar-brand img{
+            width: 50px;
+            height: 50px;
+            
+        }
+        .nav-item{
+            font-family:'Times New Roman';
+            font-size: 15px;
+            margin-left: 10px;
+        }
+        .login-btn {
+            margin-left: 25%;
+            padding: 10px;
+            font-family: 'Times New Roman', Times, serif;
+            border: none;
+            transition: background-color 0.3s;
+            border-radius: 20px;
+        }
+
+        .login-btn {
+            background-color: #614444;
+            color: white;
+        }
+
+        .login-btn:hover {
+            background-color: #615236;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        .jumbotron {
+            background-image: url(imag/negristo.jpeg);
+            background-size: cover;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            height: 400px;
+        
+        }
+
+        .lead{
+            font-size: 16px;
+            margin-bottom: 3px;
+        }
+
+
+        .jumbotron img{
+            width: 40px;
+            height: 40px;
+            
+        }
+        .jumbotron .btn{
+            background-color: rgb(56, 54, 54);
+            color: white;
+            border-radius: 15px;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+
+        
+
+
+
+
+        
+        
+
+        .product-card {
+            margin-bottom: 30px;
+            color: rgb(236, 233, 233);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+
+        .container .cardn{
+          
+          border-radius: 20px;
+          text-align: center;
+          background-color: rgb(129, 127, 123);
+
+        }
+
+        .cardn img{
+            border-radius: 20px 20px 0 0;
+        }
+
+
+
+
+
+
+
+        .caferico{
+            width: 50px;
+            height: 50px; 
+            margin-top: -8px;
+        }
+
+        .cafenegro{
+            width: 60px;
+            height: 60px;
+            
+        }
+
+        .card-img{
+            max-height: 70vh;
+           object-fit: cover;
+           border: none;
+           
+    
+        
+        }
+
+         .card-titlem{
+            color: white;
+            text-align: center;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-top: 90px;
+            font-style: italic;
+           
+        }
+
+
+
+
+
+
+
+
+
+
+        .featured-product {
+            margin: 40px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9a2;
+        }
+
+        .featured-product img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .product-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .product-description {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .product-description h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .product-description p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .btn-view-more {
+            background-color: #a5773b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .btn-view-more:hover {
+            background-color: #dbb06f;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .card{
+            background-color: rgb(58, 57, 57);
+
+        }
+        .discount-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgb(124, 93, 53);
+            color: white;
+            padding: 5px 10px;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+    
+        span{
+            text-decoration:line-through;
+            color: #b36e6e;
+            margin-left: 20px;
+            
+        
+            
+            
+        }
+
+        .n{
+            display: inline-block;
+            
+            font-weight: bold;
+        }
+         
+        .add-to-cart-btn {
+            background-color: #a17d50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border-radius: 10px;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #745733;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+       
+
+
+        .display-4{
+            font-family:'Times New Roman';
+           
+        }
+        
+        h1{
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            margin-bottom: 30px;
+            color: white;
+        }
+        
+        .card-body{
+            padding-bottom: 40px;
+        }
+
+       
+    
+        
+
+
+
+
+
+        
+
+       
+        .carousel-inner .Instalación1 {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        hr{
+            border: 5px solid rgba(255, 255, 255, 0.801);
+            width: 300px;
+            border-radius: 50px;
+        }
+
+
+
+
+
+
+        
+
+
+
+        .order-section {
+            background-image: url(imag/Granosss.jpeg) ;
+           
+            padding: 40px;
+            margin-top: 30px;
+            border-radius: 10px;
+            margin-bottom: 50px;
+            color: white;
+        }
+
+
+
+
+
+
+
+
+
+
+        .testimonial-carousel {
+            margin-left: 50px;
+            margin: auto;
+            background-color: #423728;
+            border-radius: 10px;
+            color: white;
+            margin-bottom: 50px;
+            padding-bottom: 20px;
+
+        }
+        .testimonial-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+          
+        }
+
+        .testimonial-content {
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .carousel-indicators li {
+            background-color: #000000;
+        }
+
+       h4{
+        font-family: 'Times New Roman', Times, serif;
+        padding-top: 20px;
+       }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .footer {
+            background-color: #181818;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        #footer a{
+            color: rgb(233, 230, 227);
+           
+        }
+
+        #footer img{
+            width: 30px;
+            height: 30px;
+        }
+
+
+
+
+
+
+        
+        
+
+
+        
+        
+
+
+    </style>
+</head>
+
+<body>
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"><img src="imag/grano_cafe-removebg-preview.png" alt="x">COFFEO</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto md-lg-5">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Menú</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#">Eventos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">localízanos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Contactanos</a>
+                </li>
+            </ul>
+            <button class="login-btn" onclick="window.location.href='Registra.html'">Iniciar Sesión o registrarse</button>
+             
+        </div>
+    </nav>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron text-center">
+        <img src="imag/logo blanco.png" alt="m">
+        <h1 class="display-4">COFFEO FACTORY</h1>
+            ________   <img src="imag/corazonnn.png" alt="cad">  _________
+        <p class="lead">"Más que café, una experiencia llena de sabor y calidez."</p>
+        <p class="lead">Descubre nuestros productos exclusivos con increíbles descuentos.</p>
+        <a href="#" class="btn">Explorar Novedades</a>
+    </div>
+    
+
+    <!------Otro-->
+    <H1>TOP CATEGORIAS</H1>
+    <section class="container my-5">
+        <div class="row">
+            <div class="col-md-4 product-card">
+                <div class="cardn">
+                    <img src="imag/Cafe mocha.jpeg" class="card-img-top" alt="Cold Brew">
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">COFFE MOCHA</h5>
+                        <p class="card-text">Es una mezcla de espresso, chocolate caliente y leche vaporizada, generalmente cubierto con crema batida. Tiene un sabor suave y dulce gracias al toque de chocolate..</p>
+                        <button type="button" class="btn btn-link">Ver mas</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 product-card">
+                <div class="cardn">
+                    <img src="imag/Americano2.jpeg" class="card-img-top" alt="Matcha Latte">
+                 
+                    <div class="card-body">
+                        <h5 class="card-title">EXPRESSO AMERICANO</h5>
+                        <p class="card-text">Se prepara diluyendo un shot de espresso con agua caliente, lo que le da una consistencia más ligera y un sabor menos intenso que un espresso regular, similar al café filtrado.</p>
+                        <button type="button" class="btn btn-link">Ver mas</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 product-card">
+                <div class="cardn">
+                    <img src="imag/capicciono.jpeg" class="card-img-top" alt="Vegan Dessert">
+                   
+                    <div class="card-body">
+                        <h5 class="card-title">CAPPUCCINO</h5>
+                        <p class="card-text">Es una bebida clásica italiana que combina espresso, leche vaporizada y una capa gruesa de espuma de leche. Tiene un equilibrio entre el sabor intenso del espresso y la cremosidad de la leche.</p>
+                        <button type="button" class="btn btn-link">Ver mas</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!---Fin de otro-->
+    <div class="Collage">
+      <div class="card text-bg-dark">
+        <img src="imag/fondo procar.jpeg" class="card-img" alt="...">
+        <div class="card-img-overlay">
+            <p class="card-text"><img src="imag/Tres cad.png"  class="caferico"></p>
+          <h2 class="card-titlem">No es mas que café, si no que es descubrir la delicia refrescante que ofrecemos.<br><br><img src="imag/cafe negro.png" class="cafenegro"><br><img src="imag/coffeo smal.png" class="cafesm"></h2>
+          
+        </div>
+      </div>
+    </div>
+
+
+
+    <section class="container">
+        <h1 class="text-center my-5">PRODUCTOS DEL DIA</h1>
+
+        <!-- Producto 1 -->
+        <div class="featured-product">
+            <div class="row">
+                <div class="col-md-6 product-description">
+                    <h3>Coffeo Expresso con croissant</h3>
+                    <p>Una deliciosa combinación de café, coronado con croissant relleno de Chocolate</p>
+                    <button class="btn-view-more" onclick="showMoreInfo('mocha-frappe')">Ver más</button>
+                </div>
+                <div class="col-md-6">
+                    <img src="imag/cuazp.jpg" alt="Mocha Frappé">
+                </div>
+            </div>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="featured-product">
+            <div class="row">
+                <div class="col-md-6 product-description">
+                    <h3>Cappuccino Clásico con pan Ducil </h3>
+                    <p>El equilibrio perfecto entre clasico, y caliente.</p>
+                    <button class="btn-view-more" onclick="showMoreInfo('cappuccino-clasico')">Ver más</button>
+                </div>
+                <div class="col-md-6">
+                    <img src="imag/cafe redon.png" alt="Cappuccino Clásico">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="featured-product">
+            <div class="row">
+                <div class="col-md-6 product-description">
+                    <h3>Caramelo Macciato</h3>
+                    <p>Una deliciosa combinación de café, chocolate y hielo batido, coronado con crema batida y un toque de sirope de dulce..</p>
+                    <button class="btn-view-more" onclick="showMoreInfo('cappuccino-clasico')">Ver más</button>
+                </div>
+                <div class="col-md-6">
+                    <img src="imag/sis.png" alt="Cappuccino Clásico">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- Sección de Novedades -->
+    <section class="container my-5">
+        <h1 class="text-center mb-4">PRODUCTOS DISPONIBLES</h1>
+        <div class="row">
+            <div class="col-md-4 product-card">
+                <div class="card">
+                    <img src="imag/cafee_americano_2-removebg-preview.png" class="card-img-top" alt="Cold Brew">
+                    <div class="discount-badge">33% OFF</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Coffee Expresso</h5>
+                        <p class="card-text">Una mezcla refrescante de café cold brew con un toque cítrico de naranja.</p>
+                        <p class="n">L33.50 <p class="n"><span>L50.10</span></p> </p> 
+                        <button class="add-to-cart-btn">Añadir producto</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 product-card">
+                <div class="card">
+                    <img src="imag/cafe_cappicco-removebg-preview.png" class="card-img-top" alt="Matcha Latte">
+                    <div class="discount-badge">15% OFF</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Coffee Capuccino</h5>
+                        <p class="card-text">Una combinación deliciosa de matcha con leche de coco cremosa.</p>
+                        <p class="n">L33.50 <p class="n"><span>L50.10</span></p> </p> 
+                        <button class="add-to-cart-btn">Añadir producto</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 product-card">
+                <div class="card">
+                    <img src="imag/Tarta actualiada.png" class="card-img-top" alt="Vegan Dessert">
+                    <div class="discount-badge">20% OFF</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Tarta Choloc</h5>
+                        <p class="card-text">Un postre vegano rico en chocolate, perfecto para los amantes del dulce.</p>
+                        <p class="n">L33.50 <p class="n"><span>L50.10</span></p> </p> 
+                        <button class="add-to-cart-btn">Añadir producto</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 product-card">
+                <div class="card">
+                    <img src="imag/Maccito.png" class="card-img-top" alt="Matcha Latte">
+                    <div class="discount-badge">15% OFF</div>
+                    <div class="card-body">
+                        <h5 class="card-title"> Latte Macciato</h5>
+                        <p class="card-text">Una combinación deliciosa de matcha con leche de coco cremosa.</p>
+                        <p class="n">L33.50 <p class="n"><span>L50.10</span></p> </p> 
+                        <button class="add-to-cart-btn">Añadir producto</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 product-card">
+                <div class="card">
+                    <img src="imag/Mochaz.png" class="card-img-top" alt="Matcha Latte">
+                    <div class="discount-badge">15% OFF</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Mocha Latte con Chocolate</h5>
+                        <p class="card-text">Una combinación deliciosa de matcha con cholocate cremoso.</p>
+                        <p class="n">L33.50 <p class="n"><span>L50.10</span></p> </p> 
+                        <button class="add-to-cart-btn">Añadir producto</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 product-card">
+                <div class="card">
+                    <img src="imag/stawe.png" class="card-img-top" alt="Matcha Latte">
+                    <div class="discount-badge">15% OFF</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Strawberry Cheesecake</h5>
+                        <p class="card-text">Helado crema sabor tarta de queso y fresas, con fresas y galleta.</p>
+                        <p class="n">L33.50 <p class="n"><span>L50.10</span></p> </p> 
+                        <button class="add-to-cart-btn">Añadir producto</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!------Intalacioness-->
+    <section class="container my-5">
+        <h1 class="text-center mb-4">Nuestra Instalacion Central</h1>
+        <div id="carouselGallery" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselGallery" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselGallery" data-slide-to="1"></li>
+                <li data-target="#carouselGallery" data-slide-to="2"></li>
+                <li data-target="#carouselGallery" data-slide-to="3"></li>
+                <li data-target="#carouselGallery" data-slide-to="4"></li>
+                <li data-target="#carouselGallery" data-slide-to="5"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="imag/muchos cafes.jpeg" class="Instalación1">
+                </div>
+                <div class="carousel-item">
+                    <img src="imag/INSTALACION1.jpg" class="Instalación1">
+                </div>
+                <div class="carousel-item">
+                    <img src="imag/INSTALACION2.jpg" class="Instalación1">
+                </div>
+                <div class="carousel-item">
+                    <img src="imag/INSTALACION3.jpg"class="Instalación1" >
+                </div>
+                <div class="carousel-item">
+                    <img src="imag/Sonrie hay cafe.jpeg" class="Instalación1">
+                </div>
+                <div class="carousel-item">
+                    <img src="imag/LOGO 12.png"class="Instalación1" >
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselGallery" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselGallery" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
+        </div>
+    </section>
+
+    <hr></hr>
+
+
+    <section class="container order-section">
+        <h2 class="text-center mb-4">Ordena Tu Pedido Aquí</h2>
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputName">Nombre</label>
+                    <input type="text" class="form-control" id="inputName" placeholder="Nombre">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputEmail">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Correo Electrónico">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputProduct">Producto</label>
+                <select id="inputProduct" class="form-control">
+                    <option selected>Elige un producto o añadelo</option>
+                    <option>Café Espresso</option>
+                    <option>Cold Brew con Naranja</option>
+                    <option>Matcha Latte con Coco</option>
+                    <option>Tarta Vegana de Chocolate</option>
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="inputMessage">Mensaje o Instrucciones Adicionales</label>
+                <textarea class="form-control" id="inputMessage" rows="3" placeholder="Escribe aquí tus instrucciones"></textarea>
+            </div>
+            <button type="submit" class="btn btn-dark btn-block">Enviar Pedido</button>
+        </form>
+    </section>
+
+    <section class="container testimonial-carousel">
+        <h4 class="text-center mb-4">COMENTARIOS</h4>
+        <div id="carouselTestimonials" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselTestimonials" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselTestimonials" data-slide-to="1"></li>
+                <li data-target="#carouselTestimonials" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <img src="imag/Mujer1.jpeg" class="testimonial-img" alt="Cliente 1">
+                        <div>
+                            <p class="testimonial-content">"El mejor café que he probado, y los postres son una delicia. ¡Volveré sin duda!"</p>
+                            <p class="testimonial-author">- María G.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <img src="imag/Cositas bien hechas.jpeg" class="testimonial-img" alt="Cliente 2">
+                        <div>
+                            <p class="testimonial-content">"El ambiente es increíble para trabajar o relajarse. Me encanta el cold brew con naranja."</p>
+                            <p class="testimonial-author">- Carlos R.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <img src="imag/Mujer2.jpg" class="testimonial-img" alt="Cliente 3">
+                        <div>
+                            <p class="testimonial-content">"Los descuentos son geniales, siempre hay algo nuevo y delicioso para probar."</p>
+                            <p class="testimonial-author">- Lucía P.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselTestimonials" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselTestimonials" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div id="footer" class="text-center pb-4 pt-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 col-lg">
+                        <a href="#">OPCIONES DEBAJAS</a>
+                    </div>
+                    <div class="col-6 col-lg">
+                        <a href="#">INFORMACION CORPORATIVAS</a>
+                    </div>
+                    <div class="col-6 col-lg">
+                        <a href="#">SOBRE COFFEE COMPANY</a>
+                    </div>
+                    <div class="col-6 col-lg">
+                        <a href="#">AVISO DE COOKIES</a>
+                    </div>
+                    <div class="col-6 col-lg">
+                        <a href="#">EVENTOS DE PROMOCION</a>
+                    </div><div class="col-6 col-lg">
+                        <a href="#">SERVICIOS A DOMICILIO</a>
+                    </div>
+                     <div class="col-6 col-lg">
+                        <a href="#">SOCIAL MEDIA</a>
+                        <img src="imag/intagram,.jpeg" class="social-btn" onclick="window.open('https://www.instagram.com', '_blank')">
+                        <img src="imag/whasts.jpeg" class="social-btn" onclick="window.open('https://www.whatsapp.com', '_blank')">
+                        <img src="imag/Twitter Icon.jpeg"class="social-btn" onclick="window.open('https://www.twitter.com', '_blank')">
+                        
+                    </div>
+      
+                 </div>
+            </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
